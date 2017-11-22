@@ -1,0 +1,5 @@
+string\builder\StringBuilder.class
+string\Main.class
+string\builder\StringBuilderPrepend.class
+string\app\StringApp.class
+string\builder\StringBuilderAppend.class

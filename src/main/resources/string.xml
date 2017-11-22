@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <!--Создание бина для класса StringBuilderAppend.-->
+    <bean id="appendBuilder" class="string.builder.StringBuilderAppend">
+        <!--Внедрение значения "append" типа String как аргумент конструктора-->
+        <constructor-arg type="java.lang.String" value="USD" />
+    </bean>
+
+
+    <!--Создание бина для класса StringApp.-->
+    <bean id="app" class="string.app.StringApp">
+        <!--Внедрение бина с id "appendBuilder" как поле builder с использованием сеттера-->
+        <property name="builder" ref="appendBuilder"/>
+        <!--Внедрение значения "app text" в поле "text" с использованием сеттера-->
+        <property name="text" value="Результат: " />
+    </bean>
+
+</beans>
+
